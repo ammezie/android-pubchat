@@ -6,15 +6,14 @@ Build a public anonymous chatroom with Android and Pusher
 Clone the project repository by running the command below if you use SSH
 
 ```
-git clone 
+git clone git@github.com:ammezie/android-pubchat.git
 ```
 
 If you use https, use this instead
 
 ```
-git clone 
+git clone https://github.com/ammezie/android-pubchat.git
 ```
-
 
 ### Setup Pusher
 
@@ -35,21 +34,21 @@ const pusher = new Pusher({
 Also, remember to fill in the your secret key in your `index.android.js` file by replacing this line:
 
 ```
-  var pusher = new Pusher('XXX_PUSHER_KEY');
+var pusher = new Pusher('XXX_PUSHER_KEY');
 ```
 
 Also, remember to fill in the IP address of your server in your `index.android.js` file by replacing this line:
 ```
 fetch('XXX_IP_ADDRESS', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: this.state.text
-        })
-      })
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    message: this.state.text
+  })
+})
 ```
 
 **Note: if you use IP address such as `127.0.0.1` or `localhost`, the request is most likely going to fail. This is because, in React Native, `localhost` or `127.0.0.1` refers to the internal application. Please use the network IP for your system instead.** 
@@ -65,8 +64,8 @@ npm install
 And finally, start the application by doing the following:
 ```
 react-native start
-//in another terminal, run the one below.
+// in another terminal, run the one below.
 react-native run-android
-//fire up one last terminal and run the following:
+// fire up one last terminal and run the following:
 node server.js
 ```
