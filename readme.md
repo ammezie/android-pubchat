@@ -27,6 +27,7 @@ const pusher = new Pusher({
   appId: 'XXX_PUSHER_ID',
   key: 'XXX_PUSHER_KEY',
   secret: 'XXX_PUSHER_SECRET',
+  cluster: 'XXX_APP_CLUSTER
   encrypted: true
 });
 ```
@@ -34,7 +35,9 @@ const pusher = new Pusher({
 Also, remember to fill in the your secret key in your `index.android.js` file by replacing this line:
 
 ```
-var pusher = new Pusher('XXX_PUSHER_KEY');
+var pusher = new Pusher('XXX_PUSHER_KEY', {
+  cluster: 'XXX_APP_CLUSTER
+});
 ```
 
 Also, remember to fill in the IP address of your server in your `index.android.js` file by replacing this line:
